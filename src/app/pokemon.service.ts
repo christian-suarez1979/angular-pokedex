@@ -14,6 +14,7 @@ export class PokemonService {
   }
 
   getPokemonList(): Observable<any> {
+    console.log('****** get pokemon list');
     return this.httpClient.get(`${environment.pokedexBaseUrl}/pokemon`);
   }
 }

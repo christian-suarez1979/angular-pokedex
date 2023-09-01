@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  error: string | null;
+
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
         .then((result) => {})
         .catch((error) => {
           console.log(error);
+          this.error = 'Usuario/Clave incorrecta';
         });
     } else {
       console.log('Formulario es invalido');

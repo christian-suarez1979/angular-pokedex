@@ -24,4 +24,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.=
+
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_DEFAULT_REGION=REGION
+
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 307141775595.dkr.ecr.us-west-2.amazonaws.com
+
+docker build --platform linux/amd64 --rm -t 307141775595.dkr.ecr.us-west-2.amazonaws.com/angular-pokedex .
+
+docker push 307141775595.dkr.ecr.us-west-2.amazonaws.com/angular-pokedex
